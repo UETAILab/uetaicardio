@@ -1,0 +1,35 @@
+dataset:
+  fps: 30
+  heart_rate: 75.0
+  target_size: [800, 600]
+  frame_start: 0
+  window_scale: 1.1
+
+classifier:
+  input_size: 256
+  batch_size: 16
+  device: cpu
+  ckpt: ckpts/mobilenetv2_0049_0.9507_best.pth
+
+detector:
+  batch_size: 2
+  input_size: 416
+  device: cpu
+  config: echols/yolov3/config/yolov3-custom.cfg
+  ckpt: ckpts/0.7435_yolov3_ckpt_75.pth
+
+segmentor:
+  input_size: 256
+  device: cpu
+  ckpt: ckpts/full_aux_giangunet_invhd_0009_0.8604_best.pth
+
+crop_segmentor:
+  input_size: 256
+  device: cpu
+  ckpt: ckpts/cropped_aux_bce_invhd_giangunet_0014_0.8642_best.pth
+
+runtime:
+  use_crop_segmentor: False
+  csv_out_path: tmp/ef_gls_res.csv
+  frame_start_json_file: null
+  n_cpu: 8

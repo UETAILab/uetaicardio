@@ -1,0 +1,10 @@
+videos/
+__pycache__
+*.swp
+assets
+.DS_Store
+IM_0331
+db.json
+sample
+test.py
+

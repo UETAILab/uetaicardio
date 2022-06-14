@@ -1,0 +1,31 @@
+version: '2.3'
+
+networks:
+  mynet:
+    driver: bridge
+
+services:
+  aicardio:
+    build: .
+    ports:
+      - "3334:3334"
+    environment:
+      - REDIS_URL=redis://redis:6333
+    runtime: nvidia
+    networks:
+      - mynet
+    volumes:
+      - ./server/database:/app/server/database
+
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL,CONFIG
+      - REDIS_PORT_NUMBER=6333
+      - REDIS_AOF_ENABLED=no
+    volumes:
+      - ./server/rdb/database:/bitnami/redis/data
+    networks:
+      - mynet
+    restart: always
