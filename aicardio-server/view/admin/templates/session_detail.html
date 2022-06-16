@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel=stylesheet type=text/css href="/static/bootstrap.min.css">
+    <link rel="shortcut icon" href="/static/cardiogram.png">
+
+    <title>Session</title>
+
+    <script src="/static/popper.min.js"></script>
+    <script src="/static/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="card w-75 mx-auto">
+        <div class="card-header bg-info text-white row w-100 mx-auto" style="height: 3rem">
+            <h5 class="col-11 align-self-end">Session {{session.name}}</h5>
+            <a href="../session" class="btn btn-danger btn-sm text-white col-1">⇦ Back</a>
+        </div>
+        <div class="card-body row px-auto">
+            {% for file in files %}
+            <div class="col-sm-2 card m-1 p-0 row" style="max-height: 20rem;">
+                <div class="card-body row p-1">
+                    <div name="thumbnail" class="col-sm-5 px-4">
+                        {% if file.type == 'video' %}
+                        <img class="img-thumbnail border-0" src="/static/icon-video.png" />
+                        {% elif file.type == 'image' %}
+                        <img class="img-thumbnail border-0" src={{file.link}} />
+                        {% else %}
+                        <!-- <img class="img-thumbnail border-0" src="/static/icon-image.png" /> -->
+                        <img class="img-thumbnail border-0" src="/static/icon-file.png" />
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-6 pl-1">
+                        <h6 class="font-weight-bold mx-auto text-primary"
+                            style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: small"
+                            data-toggle="tooltip" data-placement="bottom" title={{file.name}}>
+                            {{file.name}}
+                        </h6>
+                        <p class="font-weight-bold mx-auto" style="font-size: small">
+                            Type: {{file.type}}
+                        </p>
+                        <a class="col-sm-10 btn btn-success btn-sm" href={{file.link}}>Download</a>
+                        {% if file.type == 'video' %}
+                        <button type="button" class="mt-1 col-sm-10 btn btn-info btn-sm" data-toggle="modal"
+                            data-target="#modalvideo{{file.name[:-4]}}">View Detail</button>
+
+                        <div id="modalvideo{{file.name[:-4]}}" class="modal fade" tabindex="-1" role="dialog"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-2">
+                                    <div class="modal-header">
+                                        <h6 class="modal-title" id="exampleModalLabel">{{file.name[0:-4]}}</h6>
+                                    </div>
+                                    <div class="model-body">
+                                        <div class="embed-responsive embed-responsive-16by9 rounded">
+                                            <video controls="true">
+                                                <source type="video/mp4" src="{{file.link}}"
+                                                    class="embed-responsive-item" />
+                                            </video>
+                                        </div>
+                                        {% if file.data %}
+                                        <table class="table table-bordered table-striped mx-auto my-2">
+                                            <tbody>
+                                                {% for key, value in file.data.items() %}
+                                                <!-- <tr class="table-info"> -->
+                                                <tr>
+                                                    <td class="font-weight-bold">{{key}}</td>
+                                                    <td>{{value}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                        {% endif %}
+                                    </div>
+                                    <div class="model-footer d-flex justify-content-end">
+                                        <button type="button" class="btn btn-secondary btn-sm"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2021 UET-AILAB
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_diagnosis"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_apical_planes" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_zoom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_zoom" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_draw_point"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_draw_point" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_draw_boundary"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_draw_boundary" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_measure_length"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_measure_length" />
+
+
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_measure_area"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_measure_area" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_04"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:src="@drawable/ic_rotation" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_06"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:src="@drawable/ic_series" />
+
+
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_08"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:src="@drawable/ic_information" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_ef_calculate"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_ef" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_bull_eye"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_bull_eye" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_tool_auto_server"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_auto" />
+
+    <ImageButton
+        android:layout_margin="2dp"
+        android:id="@+id/bt_no_action"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="2dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="2dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_no_action" />
+
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/ivFolderBitmap"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="2dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            tools:text="Name Folder/ File" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvPath"
+            android:layout_marginTop="2dp"
+            android:layout_toLeftOf="@id/ivFolderBitmap"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="2dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            tools:text="Modify Time" />
+
+        <ImageView
+            android:id="@+id/ivFolderBitmap"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="4dp"
+            tools:src="@mipmap/ic_launcher"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/ibWorkedOn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="4dp"
+            tools:src="@drawable/annotated_64"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorPrimaryDark" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

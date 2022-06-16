@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2021 UET-AILAB
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.uetailab.aipacs.home_pacs.fragment_intepretation.InterpretationViewFragment">
+
+    <include
+        android:id="@+id/ln_editing_tool_01"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/interpretation_editing_tool"/>
+
+    <View
+        android:background="@color/black"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:id="@+id/view_rule_top"
+        app:layout_constraintTop_toBottomOf="@+id/ln_editing_tool_01"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_height="2dp">
+    </View>
+
+    <include
+        android:id="@+id/ln_tool_checkbox"
+        layout="@layout/interpretation_checkbox_tool"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_rule_top"/>
+
+    <View
+        android:background="@color/black"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        android:id="@+id/view_rule_top_02"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/ln_tool_checkbox"
+        android:layout_height="2dp">
+    </View>
+
+
+    <com.uetailab.aipacs.home_pacs.fragment_intepretation.InterpretationViewStudyPreviewCanvasView
+        android:id="@+id/interpretation_draw_canvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_rule_top_02"
+        app:layout_constraintWidth_percent="0.7"></com.uetailab.aipacs.home_pacs.fragment_intepretation.InterpretationViewStudyPreviewCanvasView>
+
+    <View
+        android:background="@color/white"
+        android:id="@+id/view_rule_01"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interpretation_draw_canvas"
+        android:layout_height="2dp">
+    </View>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.18"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintTop_toBottomOf="@+id/view_rule_01"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/interpretation_rv_frame_draw_canvas_item"
+        tools:listitem="@layout/item_frame_draw_canvas"
+        android:orientation="horizontal"
+        android:scrollbars="horizontal"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <View
+        android:background="@color/black"
+        android:id="@+id/view_rule_02"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interpretation_rv_frame_draw_canvas_item"
+        android:layout_height="2dp">
+    </View>
+
+    <include
+        android:id="@+id/ln_playback_tool"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintTop_toBottomOf="@id/view_rule_02"
+        layout="@layout/interpretation_playback_tool"
+        >
+    </include>
+
+    <GridView
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/interpretation_gv_study_preview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.3"
+
+        android:gravity="center"
+        android:columnWidth="135dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="spacingWidthUniform"
+        android:verticalSpacing="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/interpretation_draw_canvas"
+        tools:listitem="@layout/fragment_home_item_study_gv_preview"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

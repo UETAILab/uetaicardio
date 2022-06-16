@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ailab.aicardiotrainer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="AICardio-Trainer"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="q">
+<!--        <activity android:name=".searchcase.SearchCaseActivity"></activity>-->
+        <!-- <activity android:name=".nav_interpretation.NavigationInterpretationActivity"></activity> -->
+        <!-- <activity android:name=".interpretation.InterpretationActivity"></activity> -->
+        <activity android:name=".studyscreen.StudyActivity" />
+<!--        <activity android:name=".interpretation.InterpretationActivity"/>-->
+<!--        <activity android:name=".mainscreen.MainActivity" />-->
+<!--        <activity android:name=".annotationscreen.AnnotationActivity" /> &lt;!&ndash; <activity android:name=".nav_interpretation.NavigationInterpretationActivity"> &ndash;&gt;-->
+        <activity android:name=".searchcase.SearchCaseActivity"/>
+        <activity android:name=".interpretation.InterpretationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

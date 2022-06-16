@@ -1,0 +1,15 @@
+{
+   "classifier_module_name": "classification",
+   "chamber_classifier": "MobilenetV2",
+   "classifier_weights": "/data.local/data/models/chamber_classification/mobilenetv2_0049_0.9507_best.pth",
+   "classifier_batch_size": 50,
+   "detector_model_def": "PyTorch_YOLOv3/config/yolov3-custom.cfg",
+   "detector_model_weights": "/data.local/data/models/YOLO-2C/0.7435_yolov3_ckpt_75.pth",
+   "detector_batch_size": 2,
+   "segmentator_module_name": "segmentation",
+   "full_frame_segmentator": "AuxUNet",
+   "full_frame_weights": "/data.local/data/models/segmentation/full2C/full_aux_giangunet_invhd_0009_0.8604_best.pth",
+   "cropped_frame_segmentator": "Resnet101DeeplabV3",
+   "cropped_frame_weights": "/data.local/data/models/segmentation/cropped2C/cropped_aux_hd_resnet101_b8_vloss_0079_0.8707_best.pth",
+   "device": "cuda:0"
+}

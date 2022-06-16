@@ -1,0 +1,18 @@
+# coding=utf-8
+import logging
+
+__author__ = 'Tung.Luu'
+_logger = logging.getLogger(__name__)
+
+routing_table = dict({
+    'admin': dict({
+        'homepage': '/admin/homepage',
+        'dashboard': '/admin/dashboard',
+        'activate': '/admin/activate/user',
+        'delete': '/admin/delete/user',
+        'update': '/admin/update/user',
+        'reset-password': '/admin/reset-password/user',
+        'session': '/admin/view/user',
+        '404': '/admin/404'
+    })
+})

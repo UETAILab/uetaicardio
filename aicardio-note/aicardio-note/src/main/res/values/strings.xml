@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Cardio Note (new)</string>
+    <string name="edv">EDV</string>
+    <string name="perimeter">PERIMETER</string>
+    <string name="esv">ESV</string>
+    <string name="analysis">ANALYSIS</string>
+    <string name="ef">EF</string>
+    <string name="measure_volume">V</string>
+    <string name="measure_area">A</string>
+    <string name="measure_length">L</string>
+    <string name="boundary">Boundary</string>
+    <string name="point">Point</string>
+    <string name="label">Label</string>
+    <string name="zooming">Zooming</string>
+    <string name="expand">X</string>
+    <string name="mmode">M-Mode</string>
+    <string name="title_activity_annotate">AnnotateActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+</resources>

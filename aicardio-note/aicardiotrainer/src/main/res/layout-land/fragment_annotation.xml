@@ -1,0 +1,356 @@
+<!--
+  ~ Copyright 2020 UET-AILAB
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ailab.aicardiotrainer.nav_interpretation.ui.annotation.AnnotationFragment">
+
+
+    <LinearLayout
+
+        android:id="@+id/dicoms_layout"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+
+        <GridView
+
+            android:id="@+id/inter_gv_dicom_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:columnWidth="90dp"
+
+            android:gravity="center"
+
+            android:horizontalSpacing="5dp"
+            android:verticalSpacing="5dp"
+
+            android:numColumns="2"
+
+            android:scrollbars="vertical"
+
+            android:stretchMode="spacingWidthUniform"
+
+            tools:listitem="@layout/item_dicom_preview_small" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/inter_ln_right_tools"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_06"
+            android:text="RT-06"
+            >
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_07"
+            android:text="RT-07"
+            >
+        </Button>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_08"
+            android:text="RT-08"
+            >
+        </Button>
+
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inter_ln_top_tools"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dicoms_layout"
+        app:layout_constraintEnd_toStartOf="@id/inter_ln_right_tools"
+        android:gravity="center"
+
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_01"
+            android:text="TOP-TOOL-01"
+            >
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_02"
+            android:text="TOP-TOOL-02"
+            >
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_03"
+            android:text="TOP-TOOL-03"
+            >
+        </Button>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_04"
+            android:text="TOP-TOOL-04"
+            >
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/test_tool_05"
+            android:text="TOP-TOOL-05"
+            >
+        </Button>
+    </LinearLayout>
+
+
+    <com.ailab.aicardiotrainer.nav_interpretation.ui.annotation.InterpretationCanvasView
+
+        android:id="@+id/inter_iv_draw_canvas"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/inter_ln_top_tools"
+        app:layout_constraintBottom_toTopOf="@id/inter_opencv_tools"
+        app:layout_constraintStart_toEndOf="@id/dicoms_layout"
+        app:layout_constraintEnd_toStartOf="@id/inter_ln_right_tools"
+
+        >
+
+    </com.ailab.aicardiotrainer.nav_interpretation.ui.annotation.InterpretationCanvasView>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/inter_ln_frames_file"
+
+        app:layout_constraintBottom_toTopOf="@id/inter_playback"
+        app:layout_constraintStart_toEndOf="@id/dicoms_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/inter_rv_frames"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_frame_dicom" />
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inter_opencv_tools"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/inter_iv_draw_canvas"
+        app:layout_constraintBottom_toTopOf="@id/inter_ln_frames_file"
+        app:layout_constraintStart_toEndOf="@id/dicoms_layout"
+
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_gamma_correction"
+            android:text="1.0"
+            android:textColor="@color/red_primary">
+
+        </TextView>
+
+        <SeekBar
+            android:id="@+id/inter_seek_bar"
+            android:layout_width="700dp"
+
+            android:layout_height="wrap_content"
+            android:progress="85"
+
+            android:max="255"
+            android:min="0">
+
+        </SeekBar>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/inter_playback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        app:layout_constraintStart_toEndOf="@+id/dicoms_layout"
+        app:layout_constraintEnd_toStartOf="@id/inter_ln_right_tools"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+        <ImageButton
+            android:id="@+id/bt_save_data"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_save" />
+
+        <ImageButton
+            android:id="@+id/bt_clear"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_clear" />
+
+        <ImageButton
+            android:id="@+id/bt_undo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_undo" />
+
+        <ImageButton
+            android:id="@+id/bt_begin_frame"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_start_frame"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/bt_end_frame"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="2dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_end_frame"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/bt_play_pause"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="2dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_pause" />
+
+        <ImageButton
+            android:id="@+id/bt_prev_frame"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="2dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_rewind" />
+
+        <ImageButton
+            android:id="@+id/bt_next_frame"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="2dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next_frame" />
+
+        <ImageButton
+            android:id="@+id/bt_next_esv_edv_or_annotation"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/custom_image_button"
+            android:padding="2dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next_esv_edv" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

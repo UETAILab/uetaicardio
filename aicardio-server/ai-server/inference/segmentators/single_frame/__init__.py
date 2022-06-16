@@ -1,0 +1,2 @@
+from inference.segmentators.single_frame.detector import SingleFrameDetector
+from inference.segmentators.single_frame.segmentator import SingleFrameSegmentator

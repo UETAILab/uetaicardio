@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_diagnosis_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Please enter dicomDiagnosis" />
+
+        <CheckBox
+            android:id="@+id/cb_is_standard_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_diagnosis_title"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            android:text="Hình ảnh KHÔNG được lấy đúng chuẩn hình ảnh siêu âm" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="12">
+
+            <RadioButton
+                android:id="@+id/rb_wall_reduced_activity"
+                android:layout_weight="3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Giảm vận động"
+                android:textColor="@color/colorRED" />
+
+            <RadioButton
+                android:id="@+id/rb_wall_no_activity"
+                android:layout_weight="3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Không vận động"
+                android:textColor="@color/colorGREEN" />
+
+            <RadioButton
+                android:id="@+id/rb_wall_twisted_activity"
+                android:layout_weight="3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Vận động nghịch thường"
+                android:textColor="@color/colorBLUE" />
+
+            <RadioButton
+                android:id="@+id/rb_not_sync_activity"
+                android:layout_weight="3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Mất đồng bộ"
+                android:textColor="@color/colorBackground" />
+        </RadioGroup>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_chamber_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.ailab.aicardiotrainer.annotationscreen.DrawCanvasView
+                    android:id="@+id/iv_diagnosis_2C"
+                    android:layout_width="100dp"
+                    android:layout_height="145dp"
+                    android:src="@drawable/heart_2c"/>
+
+                <com.ailab.aicardiotrainer.annotationscreen.DrawCanvasView
+                    android:id="@+id/iv_diagnosis_3C"
+                    android:layout_width="100dp"
+                    android:layout_height="145dp"
+                    android:src="@drawable/heart_3c"/>
+
+                <com.ailab.aicardiotrainer.annotationscreen.DrawCanvasView
+                    android:id="@+id/iv_diagnosis_4C"
+                    android:layout_width="100dp"
+                    android:layout_height="145dp"
+                    android:src="@drawable/heart_4c"/>
+                <com.ailab.aicardiotrainer.annotationscreen.DrawCanvasView
+                    android:id="@+id/iv_diagnosis_pts_l"
+                    android:layout_width="100dp"
+                    android:layout_height="145dp"
+                    android:src="@drawable/heart_pts_l"/>
+
+                <com.ailab.aicardiotrainer.annotationscreen.DrawCanvasView
+                    android:id="@+id/iv_diagnosis_pts_s"
+                    android:layout_width="100dp"
+                    android:layout_height="145dp"
+                    android:src="@drawable/heart_pts_s"/>
+
+                <com.ailab.aicardiotrainer.annotationscreen.DrawCanvasView
+                    android:id="@+id/iv_diagnosis_no_label"
+                    android:layout_width="100dp"
+                    android:layout_height="145dp"
+                    android:src="@drawable/heart_no_label"/>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_LAD"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="LAD" />
+
+            <CheckBox
+                android:id="@+id/cb_LCx"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="LCx" />
+
+            <CheckBox
+                android:id="@+id/cb_RCA"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="RCA" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_add_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ll_2"
+            android:layout_marginTop="16dp"
+            android:hint="Thêm lưu ý"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/bt_OK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OK" />
+
+            <Button
+                android:id="@+id/bt_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:background="@drawable/bg_layout_calculator">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        android:id="@+id/tv_title"
+        android:text="Worksheet"
+        android:background="@color/blue_primary"
+        android:textColor="@color/colorWhite"
+        android:padding="-5dp"/>
+
+    <TextView
+        android:id="@+id/tv_label_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:layout_marginTop="5dp"
+        android:text="Length: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_length"
+        android:textColor="@color/colorWhite"
+        tool:text="82,2 mm"/>
+
+
+    <TextView
+        android:id="@+id/tv_label_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_length"
+        android:layout_marginTop="5dp"
+        android:text="Area: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_area"
+        android:textColor="@color/colorWhite"
+        tool:text="46,9 cm2"/>
+
+    <TextView
+        android:id="@+id/tv_label_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_area"
+        android:layout_marginTop="5dp"
+        android:text="Volume: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_volume"
+        android:textColor="@color/colorWhite"
+        tool:text="227,4 mL"/>
+
+    <TextView
+        android:id="@+id/tv_label_ESV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_volume"
+        android:layout_marginTop="5dp"
+        android:text="LV ESV: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_ESV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_ESV"
+        android:textColor="@color/colorWhite"
+        />
+
+    <TextView
+        android:id="@+id/tv_label_EDV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_ESV"
+        android:layout_marginTop="5dp"
+        android:text="LV EDV: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_EDV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_EDV"
+        android:textColor="@color/colorWhite"
+        />
+
+    <TextView
+        android:id="@+id/tv_label_EF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_EDV"
+        android:layout_marginTop="5dp"
+        android:text="EF: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_EF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_EF"
+        android:textColor="@color/colorWhite"
+        />
+
+    <TextView
+        android:id="@+id/tv_label_GLS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_EF"
+        android:layout_marginTop="5dp"
+        android:text="GLS: "
+        android:textColor="@color/colorWhite"/>
+
+    <TextView
+        android:id="@+id/tv_GLS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_label_GLS"
+        android:textColor="@color/colorWhite"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
