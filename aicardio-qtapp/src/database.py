@@ -62,13 +62,17 @@ class MyDB(metaclass=Singleton):
 
         url = f'{HOST}/upload/{fid}'
         files = {'file': open(fpath, 'rb')}
-        ret = requests.post(url, files=files)
-        if ret.status_code == 200:
-            self._update(fpath, data)
-            print('Send done')
-            return True
-        else:
-            print('Send failed')
+        try:
+            ret = requests.post(url, files=files)
+            if ret.status_code == 200:
+                self._update(fpath, data)
+                print('Send done')
+                return True
+            else:
+                print('Send failed')
+                return False
+        except:
+            print('Connection failed')
             return False
 
     def _search(self, fpath):
