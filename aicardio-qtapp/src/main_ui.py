@@ -107,14 +107,14 @@ class Ui_MainWindow(object):
         self.resView.setLayout(self.resLayout)
         self.resView.setFlat(True)
 
-        self.efGraph = pg.PlotWidget()
-        self.efGraph.setObjectName(u"efGraph")
-        self.efGraph.setTitle("LV Volumes", color="g", size="15pt")
-        styles = {'color':'w', 'font-size':'10px'}
-        self.efGraph.setLabel('left', 'Volume', **styles)
-        self.efGraph.setLabel('bottom', 'Frame index', **styles)
+        #self.efGraph = pg.PlotWidget()
+        #self.efGraph.setObjectName(u"efGraph")
+        #self.efGraph.setTitle("LV Volumes", color="g", size="15pt")
+        #styles = {'color':'w', 'font-size':'10px'}
+        #self.efGraph.setLabel('left', 'Volume', **styles)
+        #self.efGraph.setLabel('bottom', 'Frame index', **styles)
+        #self.efGraphIdx = self.frameInfo.addWidget(self.efGraph)
 
-        self.efGraphIdx = self.frameInfo.addWidget(self.efGraph)
         self.bullEyeIdx = self.frameInfo.addWidget(self.bullEye)
         self.frameInfo.setFixedSize(FRAME_WIDTH, FRAME_HEIGHT)
 

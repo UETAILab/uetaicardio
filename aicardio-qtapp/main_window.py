@@ -9,7 +9,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 from PySide6.QtMultimedia import *
-from PySide6.QtCharts import *
+#from PySide6.QtCharts import *
 from functools import partial
 
 from src.main_ui import *
@@ -78,9 +78,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.chamberView[i].mousePressEvent = partial(self._changeChamber,
                                                           chamberWidget=self.chamberView[i],
                                                           chamber=i)
-        self.efGraph.mousePressEvent = partial(self._changeChamber,
-                                               chamberWidget=self.frameInfo,
-                                               chamber=0)
+        #self.efGraph.mousePressEvent = partial(self._changeChamber, chamberWidget=self.frameInfo, chamber=0)
 
         # setup periodic events
         self.timer.timeout.connect(self._updateGraph)
@@ -207,9 +205,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         thread = self.dicomThread.get(self.chamber, None)
         if thread:
             efList = thread.efList
-            self.efGraph.plot(list(range(len(efList))), efList, symbol='+', clear=True)
+            #self.efGraph.plot(list(range(len(efList))), efList, symbol='+', clear=True)
         else:
-            self.efGraph.clear()
+            pass
+            #self.efGraph.clear()
 
         if self.chamber == 0:
             self.frameInfo.setCurrentIndex(self.bullEyeIdx)
