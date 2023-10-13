@@ -51,6 +51,8 @@ RUN pip install --ignore-installed torchvision==0.11.2
 RUN pip install --ignore-installed tqdm==4.62.3
 RUN pip install --ignore-installed Werkzeug==0.16.1
 RUN pip install --ignore-installed gdown
+RUN pip install --ignore-installed Flask
+RUN pip install --ignore-installed Werkzeug
 
 # Port the model runtime service will listen on.
 EXPOSE 3334
